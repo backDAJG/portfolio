@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development --env development --open"
+    "start": "webpack serve --mode development --env development --open",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/backDAJG/portfolio/issues"
   },
-  "homepage": "https://github.com/backDAJG/portfolio#readme",
+  "homepage": "https://backdajg.github.io/portfolio",
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/eslint-parser": "^7.16.5",

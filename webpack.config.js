@@ -3,13 +3,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
-//const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-//const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: ["@babel/polyfill", "./src/index.js"],
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
     filename: "[name].[contenthash].js",
   },
   resolve: {
@@ -63,14 +63,14 @@ module.exports = {
     host: "localhost",
     port: 8080,
   },
-  /*  optimization: {
+  optimization: {
     minimize: true,
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
     runtimeChunk: true,
     splitChunks: {
-      chunks: 'all',
+      chunks: "all",
     },
-  }, */
+  },
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
