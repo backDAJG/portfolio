@@ -12,7 +12,7 @@ import {
 export default ({ image, icon, title, content }) => {
   return (
     <Card
-      sx={{ width: 345, position: "relative" }}
+      sx={{ width: "100%", position: "relative" }}
       data-aos="fade-up"
       data-aos-duration="1000"
     >

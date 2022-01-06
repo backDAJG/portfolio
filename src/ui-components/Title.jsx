@@ -5,7 +5,7 @@ export default ({ title }) => (
     data-aos="fade-up"
     data-aos-duration="1000"
     variant="middle"
-    sx={{ m: 5 }}
+    sx={{ mt: 5, mb: 5 }}
   >
     <Typography variant="h1" fontSize={50} color="primary">
       {title}

@@ -26,17 +26,10 @@ export default () => {
       <Grid container spacing={0} sx={{ display: "flex" }} alignItems="center">
         <SubTitle subtitle="¿Who I am?" />
         <Grid item xl={12} md={12} xs={12}>
+          <Paragraph content="Colombiano, originally from Bogotá, Distrito Capital. I have worked in different projects as a Backend mainly, I also participate in some projects such as Frontend, although my great passion is the Backend since it is where I perform in a better way." />
           <Paragraph
-            content="Colombiano, originario de Bogotá, Distrito Capital. He trabajado en
-            diferentes proyectos como desarrollador backend principalmente,
-            tambien he participado de algunos proyectos como frontend, aunque mi
-            gran pasion es el backend ya que es ahi donde me desempeño de una
-            mejor manera."
-          />
-          <Paragraph
-            content="He liderado desarrollos de plataformas moviles vazadas en
-            tecnologias como:"
-            list={["Flutter (Principalmente).", "Ionic.", "React Native."]}
+            content="I have led developments of Mobile platforms based on technologies such as:"
+            list={["Flutter (Mainly).", "Ionic.", "React Native."]}
           />
         </Grid>
         <SubTitle subtitle="My Skills" />
@@ -54,20 +47,13 @@ export default () => {
         </Grid>
         <SubTitle subtitle="My Trajectory" />
         <Grid item xl={12} md={12} xs={12}>
-          <Paragraph
-            content="Desarrollador backend con mas de 4 años de experiencia, creando mi
-            primer sitio web en el 2015, trabaje durante un periodo de dos años
-            liderando proyectos basados en tecnologias como Flutter en el
-            apartado de aplicaciones moviles y NodeJS en el apartado de API'S o
-            Backend este siendo su framework principal ExpressJS. Todo esto
-            trabajando para una empresa de rastreo satelital."
-          />
+          <Paragraph content="Backend Developer with more than 4 years of experience, creating my first website in 2015, I worked for a period of three years leading projects based on technologies such as Flutter in the section of Mobile applications and NodeJS in the section of API'S or Backend this being its main ExpressJS Framework. All this working for a satellite tracking company." />
           <Paragraph
             content={
               <>
-                En la actualidad me encuentro trabajando como desarrollador
-                Freelance, cuento con mas de 20 certificados enfocados al
-                desarrollo web y una carrera completa en la plataforma{" "}
+                Currently I am working as a Freelance developer, I have more
+                than 20 certificates focused on web development and a full
+                career on the platform{" "}
                 <a
                   href="https://platzi.com/p/DAJG/"
                   style={{ color: theme.palette.primary.main }}
@@ -75,28 +61,27 @@ export default () => {
                 >
                   platzi.com
                 </a>
-                . Actualmente estoy trabajando para perfeccionar mis habilidades
-                en el idioma inglés.
+                . I am currently working to hone my skills in the English
+                language.
               </>
             }
           />
         </Grid>
         <SubTitle subtitle="Recent Projects" />
         <Grid item xl={12} md={12} xs={12}>
-          <Paragraph
-            content="En la actualidad me encuentro trabajando en un proyecto freelance
-            para una empresa de rastreo satelital."
-          />
-          <Paragraph
-            content="Mi tiempo libre lo ocupo en un proyecto propio el cual se enfoca en
-            el rublo de Ingenieria Civil. Basado en tecnologias como ReactJS,
-            Firebase y MaterialUI. Esto acompañado de 3 compañeros."
-          />
+          <Paragraph content="I am currently working on a Freelance project for a satellite tracking company." />
+          <Paragraph content="My free time is spent on my own project which focuses on the Civil Engineering ruble. Based on technologies like ReactJS, Firebase and MaterialUI. This accompanied by 3 companions." />
         </Grid>
       </Grid>
       <Title title="Services" />
-      <Grid container spacing={2}>
-        <Grid item sx={{ display: "flex" }} justifyContent="center" xs={4}>
+      <Grid container spacing={2} sx={{ pl: 2, pr: 2 }} columns={9}>
+        <Grid
+          item
+          sx={{ display: "flex" }}
+          justifyContent="center"
+          xs={12}
+          md={3}
+        >
           <CardService
             image="https://img.freepik.com/free-vector/low-poly-abstract-white-golden-lines-background_1017-26507.jpg?size=626&ext=jpg"
             title="Web Design"
@@ -111,7 +96,13 @@ export default () => {
                 Pariatur, sapiente."
           />
         </Grid>
-        <Grid item sx={{ display: "flex" }} justifyContent="center" xs={4}>
+        <Grid
+          item
+          sx={{ display: "flex" }}
+          justifyContent="center"
+          xs={12}
+          md={3}
+        >
           <CardService
             image="https://image.freepik.com/vector-gratis/hermoso-fondo-blanco-formas-lineas-doradas_1017-27145.jpg"
             title="API"
@@ -126,7 +117,13 @@ export default () => {
                 Pariatur, sapiente."
           />
         </Grid>
-        <Grid item sx={{ display: "flex" }} justifyContent="center" xs={4}>
+        <Grid
+          item
+          sx={{ display: "flex" }}
+          justifyContent="center"
+          xs={12}
+          md={3}
+        >
           <CardService
             image="https://image.freepik.com/vector-gratis/fondo-blanco-formas-lineas-lujo-dorado_1017-27144.jpg"
             title="Mobile Development"
