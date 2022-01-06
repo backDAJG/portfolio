@@ -1,1 +1,46 @@
 @import '_themes-vars.module.styl'
+
+$hw = 150
+$wh = ((50*$hw)/86)*1px
+
+@keyframes floating {
+    0% { transform: translate(0,  0px) }
+    50%  { transform: translate(0, 15px) }
+    100%   { transform: translate(0, -0px) }
+}
+
+.hexagono
+    position: relative
+    display: block
+    background-color: #fff
+    width: $hw*1px
+    height: $wh
+    z-index: 999
+    transition: all .5s ease-out
+    margin: 5px
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 4px
+    backdrop-filter: blur(10px)
+    //animation: floating 3s ease-in-out infinite
+    &::after
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        width: inherit
+        height: inherit
+        transform: rotate(60deg)
+        background-color: inherit
+        border-radius: 4px
+    &::before
+        content: ''
+        display: block
+        position: absolute
+        top: 0px
+        width: inherit
+        height: inherit
+        transform: rotate(-60deg)
+        background-color: inherit
+        border-radius: 4px
