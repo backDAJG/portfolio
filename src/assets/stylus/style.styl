@@ -5,10 +5,14 @@ $wh = ((50*$hw)/86)*1px
 
 @keyframes floating {
     0% { transform: translate(0,  0px) }
-    50%  { transform: translate(0, 15px) }
+    50%  { transform: translate(0, 30px) }
     100%   { transform: translate(0, -0px) }
 }
 
+.floating-animation
+    animation: floating 3s ease-in-out infinite
+    margin-left: 70px
+    width: 50%
 .hexagono
     position: relative
     display: block

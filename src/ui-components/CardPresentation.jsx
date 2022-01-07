@@ -16,7 +16,12 @@ export default () => {
       }}
     >
       <Grid container justifyContent="center" alignItems="center">
-        <Grid item data-aos="fade-down" data-aos-duration="2000">
+        <Grid
+          item
+          data-aos="fade-down"
+          data-aos-duration="2000"
+          sx={{ ml: 2, mr: 2 }}
+        >
           <Typography
             variant="h1"
             align="center"

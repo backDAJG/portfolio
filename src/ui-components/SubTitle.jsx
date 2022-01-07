@@ -10,9 +10,9 @@ export default ({ subtitle }) => {
       xl={12}
       md={12}
       xs={12}
-      sx={{ display: "flex", ml: sm ? 1 : 10, mr: 10, mt: 5 }}
-      data-aos="fade-up"
-      data-aos-duration="1000"
+      sx={{ display: "flex", ml: sm ? 2 : 10, mr: 10, mt: 5 }}
+      data-aos={sm ? null : "fade-up"}
+      data-aos-duration={sm ? null : "1000"}
     >
       <Typography
         variant="caption"

@@ -7,12 +7,12 @@ export default ({ content, list }) => {
   return (
     <Typography
       variant="subtitle1"
-      sx={{ ml: sm ? 1 : 10, mr: sm ? 1 : 10, mt: 5 }}
+      sx={{ ml: sm ? 2 : 10, mr: sm ? 2 : 10, mt: 5 }}
       color="gray"
       textAlign={sm ? "justify" : "left"}
       fontSize={20}
-      data-aos="fade-up"
-      data-aos-duration="1000"
+      data-aos={sm ? null : "fade-up"}
+      data-aos-duration={sm ? null : "1000"}
     >
       {content}
       {list && (

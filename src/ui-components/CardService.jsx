@@ -7,14 +7,18 @@ import {
   CardMedia,
   Typography,
   Button,
+  useMediaQuery,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 export default ({ image, icon, title, content }) => {
+  const theme = useTheme();
+  const sm = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Card
       sx={{ width: "100%", position: "relative" }}
-      data-aos="fade-up"
-      data-aos-duration="1000"
+      data-aos={sm ? null : "fade-up"}
+      data-aos-duration={sm ? null : "1000"}
     >
       <CardMedia
         component="img"
