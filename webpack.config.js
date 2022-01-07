@@ -85,11 +85,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "assets/[name].css",
     }),
-    /*  new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
-      maximumFileSizeToCacheInBytes: 4 * 1024 * 1024
-    }),  */
     new CleanWebpackPlugin(),
     new Dotenv(),
   ],

@@ -1,9 +1,9 @@
 import { Tooltip } from "@mui/material";
 
-export default ({ children, timeout, aos, title }) => {
+export default ({ children, title, id }) => {
   return (
     <Tooltip title={title}>
-      <div className="hexagono" data-aos={aos} data-aos-duration={timeout}>
+      <div className="hexagono" id={id}>
         <div
           style={{
             position: "absolute",
@@ -12,7 +12,7 @@ export default ({ children, timeout, aos, title }) => {
             justifyContent: "center",
             alignItems: "center",
             marginRight: -10,
-            cursor: 'pointer'
+            cursor: "pointer",
           }}
         >
           {children}

@@ -101,8 +101,7 @@ export default () => {
                   stroke={1}
                 />
               }
-              content="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Pariatur, sapiente."
+              content="Web design based on the ReactJS Framework accompanied by the MUI Library (MaterialUI)."
             />
           </Grid>
           <Grid
@@ -122,8 +121,8 @@ export default () => {
                   stroke={1}
                 />
               }
-              content="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Pariatur, sapiente."
+              content="
+Construction of API's (Application Programming Interface). Based on NodeJS, Designed as an asynchronous event-oriented JavaScript execution environment, its main framework being ExpressJS."
             />
           </Grid>
           <Grid
@@ -143,14 +142,14 @@ export default () => {
                   stroke={1}
                 />
               }
-              content="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Pariatur, sapiente."
+              content="Construction of multiplatform mobile applications, based mainly on the Flutter SDK, is being a hybrid technology thus providing support on Android, IOS and Web."
             />
           </Grid>
         </Grid>
       </Element>
       <Element name="contact" id="contact">
         <Title title="Contact" />
+        <Box sx={{ height: 10 }} />
         <FormContact md={md} theme={theme} sm={sm} />
         <Box sx={{ height: 100 }} />
       </Element>

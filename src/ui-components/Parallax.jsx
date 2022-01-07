@@ -43,31 +43,36 @@ export default () => {
               display: md ? "none" : "flex",
             }}
           >
-            <Grid container justifyContent="center">
+            <Grid
+              container
+              justifyContent="center"
+              data-aos="fade-left"
+              data-aos-duration={2000}
+            >
               <Grid item sx={{ display: "flex" }}>
-                <Hexagono timeout={2000} aos="fade-down" title="ReactJS">
+                <Hexagono id="hexagono-top-left" title="ReactJS">
                   <React width={100} heigth={100} />
                 </Hexagono>
-                <Hexagono timeout={2000} aos="fade-down" title="Python">
+                <Hexagono id="hexagono-top-right" title="Python">
                   <Python width={100} height={100} />
                 </Hexagono>
               </Grid>
               <Grid item sx={{ display: "flex", mt: 5, mb: 5 }}>
-                <Hexagono timeout={2000} aos="fade-right" title="NodeJS">
+                <Hexagono id="hexagono-center-left" title="NodeJS">
                   <NodeJS width={100} height={100} />
                 </Hexagono>
-                <Hexagono timeout={2000} aos="zoom-in" title="JavaScript">
+                <Hexagono id="hexagono-center-middle" title="JavaScript">
                   <JavaScript width={100} height={100} />
                 </Hexagono>
-                <Hexagono timeout={2000} aos="fade-left" title="Flutter">
+                <Hexagono id="hexagono-center-right" title="Flutter">
                   <Flutter width={100} height={100} />
                 </Hexagono>
               </Grid>
               <Grid item sx={{ display: "flex" }}>
-                <Hexagono timeout={2000} aos="fade-up" title="MongoDB">
+                <Hexagono title="MongoDB" id="hexagono-bottom-left">
                   <MongoDB widht={100} heigth={100} />
                 </Hexagono>
-                <Hexagono timeout={2000} aos="fade-up" title="Dart">
+                <Hexagono id="hexagono-bottom-right" title="Dart">
                   <Dart widht={100} heigth={100} />
                 </Hexagono>
               </Grid>

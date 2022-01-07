@@ -8,6 +8,31 @@ $wh = ((50*$hw)/86)*1px
     50%  { transform: translate(0, 30px) }
     100%   { transform: translate(0, -0px) }
 }
+@keyframes floating-hexagono-top-left {
+    0% { transform: translate(0,  0px) }
+    50%  { transform: translate(0, -30px) }
+    100%   { transform: translate(0, -0px) }
+}
+@keyframes floating-hexagono-bottom-right {
+    0% { transform: translate(0,  0px) }
+    50%  { transform: translate(0, 30px) }
+    100%   { transform: translate(0, -0px) }
+}
+@keyframes floating-hexagono-center-left {
+    0% { transform: translate(0,  0px) }
+    50%  { transform: translate(-30px, 0) }
+    100%   { transform: translate(-0px, 0) }
+}
+@keyframes floating-hexagono-center-right {
+    0% { transform: translate(0,  0px) }
+    50%  { transform: translate(30px, 0) }
+    100%   { transform: translate(-0px, 0) }
+}
+@keyframes floating-hexagono-center-middle {
+    0% { transform: scale(1) }
+    50%  { transform: scale(1.1) }
+    100%   { transform: scale(1) }
+}
 
 .floating-animation
     animation: floating 3s ease-in-out infinite
@@ -48,3 +73,17 @@ $wh = ((50*$hw)/86)*1px
         transform: rotate(-60deg)
         background-color: inherit
         border-radius: 4px
+#hexagono-top-left
+    animation: floating-hexagono-top-left 3s ease-in-out infinite
+#hexagono-top-right
+    animation: floating-hexagono-top-left 3.5s ease-in-out infinite
+#hexagono-bottom-right
+    animation: floating-hexagono-bottom-right 3s ease-in-out infinite
+#hexagono-bottom-left
+    animation: floating-hexagono-bottom-right 3.5s ease-in-out infinite
+#hexagono-center-left
+    animation: floating-hexagono-center-left 3s ease-in-out infinite
+#hexagono-center-middle
+    animation: floating-hexagono-center-middle 3.5s ease-in-out infinite
+#hexagono-center-right
+    animation: floating-hexagono-center-right 3.5s ease-in-out infinite

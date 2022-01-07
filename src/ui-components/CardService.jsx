@@ -16,7 +16,7 @@ export default ({ image, icon, title, content }) => {
   const sm = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Card
-      sx={{ width: "100%", position: "relative" }}
+      sx={{ width: {sm: "70%", xs: "100%", md: "100%", lg: "70%"}, position: "relative" }}
       data-aos={sm ? null : "fade-up"}
       data-aos-duration={sm ? null : "1000"}
     >
@@ -65,11 +65,11 @@ export default ({ image, icon, title, content }) => {
           {content}
         </Typography>
       </CardContent>
-      <CardActions>
+      {/* <CardActions>
         <Button size="large" fullWidth variant="outlined">
           Get Service
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 };

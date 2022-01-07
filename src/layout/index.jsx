@@ -93,7 +93,7 @@ export default (props) => {
                     spy={true}
                     to="contact"
                     smooth="easeOutCubic"
-                    offset={-220}
+                    offset={-100}
                     duration={1000}
                     onSetActive={(to) => setProgress(progressCollection[to])}
                   >
