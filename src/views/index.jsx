@@ -147,7 +147,7 @@ export default () => {
           </Grid>
         </Grid>
       </Element>
-      <Element name="contact" id="contact" scrolling="dsad">
+      <Element name="contact" id="contact">
         <Title title="Contact" />
         <Box sx={{ position: "relative", mb: 5 }}>
           <Grid container spacing={0}>
@@ -241,6 +241,7 @@ export default () => {
             </Grid>
           </Box>
         </Box>
+        <Box sx={{ height: 100 }} />
       </Element>
     </>
   );

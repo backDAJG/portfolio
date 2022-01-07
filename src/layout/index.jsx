@@ -8,12 +8,11 @@ import {
   LinearProgress,
   Toolbar,
   Tooltip,
-  Typography,
   useMediaQuery,
 } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import ElevationScroll from "./ElevationScroll";
-import { IconBrandGithub } from "@tabler/icons";
+import { IconBrandGithub, IconCode } from "@tabler/icons";
 import { styled } from "@mui/styles";
 import { useTheme } from "@mui/material/styles";
 import MobileMenu from "./MobileMenu";
@@ -28,7 +27,7 @@ const Main = styled("main")(({ theme, sm }) => ({
   marginRight: sm,
   marginLeft: sm,
   marginBottom: "20px",
-  marginTop: "73px",
+  marginTop: "105px",
   overflow: "hidden",
 }));
 
@@ -51,14 +50,7 @@ export default (props) => {
         <AppBar color="inherit" position="fixed">
           <Container maxWidth="xl">
             <Toolbar>
-              <Typography
-                variant="h1"
-                noWrap
-                component="div"
-                sx={{ mr: 2, display: "flex" }}
-              >
-                Logo
-              </Typography>
+              <IconCode size={50} color={theme.palette.primary.main} />
               <Box sx={{ flexGrow: 1 }} />
               <Box
                 sx={{
@@ -80,7 +72,7 @@ export default (props) => {
                     spy={true}
                     to="aboutme"
                     smooth="easeOutCubic"
-                    offset={-200}
+                    offset={-150}
                     duration={1000}
                     onSetActive={(to) => setProgress(progressCollection[to])}
                   >
@@ -101,7 +93,7 @@ export default (props) => {
                     spy={true}
                     to="contact"
                     smooth="easeOutCubic"
-                    offset={-100}
+                    offset={-220}
                     duration={1000}
                     onSetActive={(to) => setProgress(progressCollection[to])}
                   >
@@ -115,7 +107,7 @@ export default (props) => {
                   <IconBrandGithub />
                 </IconButton>
               </Tooltip>
-              <MobileMenu theme={theme} />
+              <MobileMenu theme={theme} setProgress={setProgress} />
             </Toolbar>
           </Container>
         </AppBar>

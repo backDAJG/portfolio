@@ -6,7 +6,7 @@ import {
   MenuItem,
   Typography,
   Divider,
-  ButtonBase
+  ButtonBase,
 } from "@mui/material";
 import {
   IconBook,
@@ -18,10 +18,17 @@ import {
   IconUser,
 } from "@tabler/icons";
 import { useState } from "react";
+import { Link } from "react-scroll";
 
-export default ({ theme }) => {
+export default ({ theme, setProgress }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  const progressCollection = {
+    home: 20,
+    aboutme: 48,
+    services: 73,
+    contact: 100,
+  };
   return (
     <>
       <Box sx={{ display: { xs: "block", sm: "none" } }}>
@@ -55,7 +62,10 @@ export default ({ theme }) => {
         id="menu-portfolio"
         open={open}
         onClose={() => setAnchorEl(null)}
-        onClick={() => setAnchorEl(null)}
+        onClick={() => {
+          setAnchorEl(null);
+          console.log("ok");
+        }}
         PaperProps={{
           elevation: 0,
           sx: {
@@ -85,40 +95,69 @@ export default ({ theme }) => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem sx={{ width: 250 }}>
-          <IconHome color={theme.palette.primary.main} />
-          <Typography variant="subtitle1" sx={{ marginLeft: 1 }}>
-            Home
-          </Typography>
-        </MenuItem>
+        <Link
+          spy={true}
+          to="home"
+          smooth="easeOutCubic"
+          offset={-100}
+          duration={1000}
+          onClick={() => setAnchorEl(null)}
+        >
+          <MenuItem sx={{ width: 250 }}>
+            <IconHome color={theme.palette.primary.main} />
+            <Typography variant="subtitle1" sx={{ marginLeft: 1 }}>
+              Home
+            </Typography>
+          </MenuItem>
+        </Link>
         <Divider variant="middle" />
-        <MenuItem>
-          <IconUser color={theme.palette.primary.main} />
-          <Typography variant="subtitle1" sx={{ marginLeft: 1 }}>
-            About Me
-          </Typography>
-        </MenuItem>
+        <Link
+          spy={true}
+          to="aboutme"
+          smooth="easeOutCubic"
+          offset={-100}
+          duration={1000}
+          onClick={() => setAnchorEl(null)}
+        >
+          <MenuItem>
+            <IconUser color={theme.palette.primary.main} />
+            <Typography variant="subtitle1" sx={{ marginLeft: 1 }}>
+              About Me
+            </Typography>
+          </MenuItem>
+        </Link>
         <Divider variant="middle" />
-        <MenuItem>
-          <IconBox color={theme.palette.primary.main} />
-          <Typography variant="subtitle1" sx={{ marginLeft: 1 }}>
-            Services
-          </Typography>
-        </MenuItem>
+        <Link
+          spy={true}
+          to="services"
+          smooth="easeOutCubic"
+          offset={-100}
+          duration={1000}
+          onClick={() => setAnchorEl(null)}
+        >
+          <MenuItem>
+            <IconBox color={theme.palette.primary.main} />
+            <Typography variant="subtitle1" sx={{ marginLeft: 1 }}>
+              Services
+            </Typography>
+          </MenuItem>
+        </Link>
         <Divider variant="middle" />
-        <MenuItem>
-          <IconMailbox color={theme.palette.primary.main} />
-          <Typography variant="subtitle1" sx={{ marginLeft: 1 }}>
-            Contact
-          </Typography>
-        </MenuItem>
-        <Divider variant="middle" />
-        <MenuItem>
-          <IconBrandGithub color={theme.palette.primary.main} />
-          <Typography variant="subtitle1" sx={{ marginLeft: 1 }}>
-            GitHub
-          </Typography>
-        </MenuItem>
+        <Link
+          spy={true}
+          to="contact"
+          smooth="easeOutCubic"
+          offset={-100}
+          duration={1000}
+          onClick={() => setAnchorEl(null)}
+        >
+          <MenuItem>
+            <IconMailbox color={theme.palette.primary.main} />
+            <Typography variant="subtitle1" sx={{ marginLeft: 1 }}>
+              Contact
+            </Typography>
+          </MenuItem>
+        </Link>
       </Menu>
     </>
   );
