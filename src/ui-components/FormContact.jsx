@@ -12,7 +12,7 @@ import * as Yup from "yup";
 import { IMaskInput } from "react-imask";
 import { forwardRef } from "react";
 import AnimateButton from "./AnimateButton";
-import { IconSend } from "@tabler/icons";
+import { IconBug, IconCheck, IconSend } from "@tabler/icons";
 import { LoadingButton } from "@mui/lab";
 import emailjs from "emailjs-com";
 
@@ -113,14 +113,13 @@ export default ({ md, theme, sm }) => {
                 process.env.USER_ID
               )
               .then((res) => {
-                console.log(res)
                 setSubmitting(false);
                 setStatus("success");
               })
               .catch((err) => {
                 console.log(err);
                 setSubmitting(false);
-                setStatus("failed")
+                setStatus("error");
               });
           }}
         >
@@ -132,7 +131,7 @@ export default ({ md, theme, sm }) => {
             isSubmitting,
             touched,
             values,
-            status,
+            status = "primary",
           }) => (
             <form noValidate onSubmit={handleSubmit}>
               <Grid container spacing={1}>
@@ -275,12 +274,26 @@ export default ({ md, theme, sm }) => {
                       size="large"
                       type="submit"
                       variant="contained"
-                      color="primary"
-                      endIcon={<IconSend />}
+                      color={status}
+                      endIcon={
+                        status === "success" ? (
+                          <IconCheck />
+                        ) : status === "error" ? (
+                          <IconBug />
+                        ) : (
+                          <IconSend />
+                        )
+                      }
                       loading={isSubmitting}
                       loadingPosition="end"
                     >
-                      {isSubmitting ? "Sending Mail" : "Send Mail"}
+                      {isSubmitting
+                        ? "Sending Mail"
+                        : status === "success"
+                        ? "Mail sent successfully"
+                        : status === "error"
+                        ? "An error occurred while sending the mail"
+                        : "Send Mail"}
                     </LoadingButton>
                   </AnimateButton>
                 </Grid>
@@ -288,41 +301,6 @@ export default ({ md, theme, sm }) => {
             </form>
           )}
         </Formik>
-        {/* <Grid container spacing={2}>
-          <Grid item xs={6}>
-            <TextField fullWidth id="outlined-basic" label="Name" />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField
-              fullWidth
-              id="outlined-basic"
-              label="Phone Number (optional)"
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField fullWidth id="outlined-basic" label="Name" />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField fullWidth id="outlined-basic" label="Subject" />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              id="outlined-basic"
-              multiline
-              rows={4}
-              label="Message"
-            />
-            <Button
-              sx={{ mt: 2 }}
-              variant="outlined"
-              fullWidth
-              endIcon={<IconSend />}
-            >
-              Send Mail
-            </Button>
-          </Grid>
-        </Grid> */}
       </Box>
     </Box>
   );
