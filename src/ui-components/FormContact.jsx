@@ -14,6 +14,7 @@ import { forwardRef } from "react";
 import AnimateButton from "./AnimateButton";
 import { IconSend } from "@tabler/icons";
 import { LoadingButton } from "@mui/lab";
+import emailjs from "emailjs-com";
 
 const NumberPhoneMask = forwardRef((props, ref) => {
   const { onChange, ...other } = props;
@@ -104,9 +105,23 @@ export default ({ md, theme, sm }) => {
             email: Yup.string().email().required("Email is required"),
           })}
           onSubmit={(values, { setErrors, setStatus, setSubmitting }) => {
-            setTimeout(() => {
-              setSubmitting(false);
-            }, 2000);
+            emailjs
+              .send(
+                process.env.SERVICE_ID,
+                process.env.TEMPLATE_ID,
+                values,
+                process.env.USER_ID
+              )
+              .then((res) => {
+                console.log(res)
+                setSubmitting(false);
+                setStatus("success");
+              })
+              .catch((err) => {
+                console.log(err);
+                setSubmitting(false);
+                setStatus("failed")
+              });
           }}
         >
           {({
@@ -117,6 +132,7 @@ export default ({ md, theme, sm }) => {
             isSubmitting,
             touched,
             values,
+            status,
           }) => (
             <form noValidate onSubmit={handleSubmit}>
               <Grid container spacing={1}>

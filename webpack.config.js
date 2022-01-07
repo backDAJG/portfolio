@@ -63,14 +63,14 @@ module.exports = {
     host: "localhost",
     port: 8080,
   },
-  optimization: {
+  /* optimization: {
     minimize: true,
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
     runtimeChunk: true,
     splitChunks: {
       chunks: "all",
     },
-  },
+  }, */
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
