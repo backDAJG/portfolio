@@ -64,7 +64,6 @@ export default ({ theme, setProgress }) => {
         onClose={() => setAnchorEl(null)}
         onClick={() => {
           setAnchorEl(null);
-          console.log("ok");
         }}
         PaperProps={{
           elevation: 0,

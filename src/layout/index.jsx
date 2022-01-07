@@ -10,7 +10,7 @@ import {
   Tooltip,
   useMediaQuery,
 } from "@mui/material";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link as LinkR } from "react-router-dom";
 import ElevationScroll from "./ElevationScroll";
 import { IconBrandGithub, IconCode } from "@tabler/icons";
 import { styled } from "@mui/styles";
@@ -102,12 +102,19 @@ export default (props) => {
                 </Box>
                 <LinearProgress variant="determinate" value={progress} />
               </Box>
+              <MobileMenu theme={theme} setProgress={setProgress} />
               <Tooltip title="GitHub">
-                <IconButton aria-label="github" color="primary" sx={{ ml: 2 }}>
+                <IconButton
+                  LinkComponent="a"
+                  target="_blank"
+                  href="https://github.com/backDAJG"
+                  aria-label="github"
+                  color="primary"
+                  sx={{ ml: 2 }}
+                >
                   <IconBrandGithub />
                 </IconButton>
               </Tooltip>
-              <MobileMenu theme={theme} setProgress={setProgress} />
             </Toolbar>
           </Container>
         </AppBar>
